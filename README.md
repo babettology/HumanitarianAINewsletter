@@ -1,1 +1,1 @@
-? Humanitarian AI Newsletter
+# Humanitarian AI Newsletter
