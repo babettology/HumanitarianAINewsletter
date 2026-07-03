@@ -64,7 +64,7 @@ def rank_by_similarity(papers, model):
 def build_newsletter_markdown(papers):
     today = datetime.now().strftime("%Y-%m-%d")
     lines = [
-        f"# Humanitarian AI Weekly Digest — {today}",
+        f"# Humanitarian AI Weekly Newsletter — {today}",
         "",
         f"_{len(papers)} paper(s) this week, ranked by relevance to humanitarian tech and innovation._",
         "",
@@ -114,7 +114,10 @@ if __name__ == "__main__":
     print(newsletter)
     print("=" * 60 + "\n")
 
-    filename = f"digest_{datetime.now().strftime('%Y-%m-%d')}.md"
+    import os
+    os.makedirs("newsletters", exist_ok=True)
+
+    filename = os.path.join("newsletters", f"Humanitarian AI Newsletter - {datetime.now().strftime('%Y-%m-%d')}.md")
     with open(filename, "w") as f:
         f.write(newsletter)
 
